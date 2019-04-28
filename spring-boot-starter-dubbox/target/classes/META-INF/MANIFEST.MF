@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: spring-boot-starter-dubbox
+Implementation-Version: 1.0.0
+Built-By: Finn
+Implementation-Vendor-Id: info.zoio.spring
+Build-Jdk: 1.8.0_181
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/spring-boot-starter-dubbox
+Created-By: Maven Integration for Eclipse
+

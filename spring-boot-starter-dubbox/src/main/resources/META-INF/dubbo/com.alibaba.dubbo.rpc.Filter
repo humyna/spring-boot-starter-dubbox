@@ -1,0 +1,2 @@
+myConsumerFilter=info.zoio.spring.dubbox.rpc.filter.ConsumerFilterBean
+myProviderFilter=info.zoio.spring.dubbox.rpc.filter.ProviderFilterBean

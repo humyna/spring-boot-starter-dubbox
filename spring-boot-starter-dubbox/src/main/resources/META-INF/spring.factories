@@ -1,0 +1,2 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+info.zoio.spring.dubbox.config.DubboxAutoConfiguration

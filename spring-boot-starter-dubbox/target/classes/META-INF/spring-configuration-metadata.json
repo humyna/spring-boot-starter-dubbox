@@ -1,0 +1,84 @@
+{
+  "hints": [],
+  "groups": [
+    {
+      "sourceType": "info.zoio.spring.dubbox.properties.DubboProperties",
+      "name": "spring.dubbo",
+      "type": "info.zoio.spring.dubbox.properties.DubboProperties"
+    }
+  ],
+  "properties": [
+    {
+      "sourceType": "info.zoio.spring.dubbox.properties.DubboProperties",
+      "name": "spring.dubbo.application",
+      "description": "应用基础信息",
+      "type": "com.alibaba.dubbo.config.ApplicationConfig"
+    },
+    {
+      "sourceType": "info.zoio.spring.dubbox.properties.DubboProperties",
+      "name": "spring.dubbo.base-package",
+      "description": "注解所在的包,多个用逗号分割",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "info.zoio.spring.dubbox.properties.DubboProperties",
+      "name": "spring.dubbo.consumer",
+      "description": "公用的消费者配置",
+      "type": "com.alibaba.dubbo.config.ConsumerConfig"
+    },
+    {
+      "sourceType": "info.zoio.spring.dubbox.properties.DubboProperties",
+      "name": "spring.dubbo.module",
+      "description": "应用模块定义",
+      "type": "com.alibaba.dubbo.config.ModuleConfig"
+    },
+    {
+      "sourceType": "info.zoio.spring.dubbox.properties.DubboProperties",
+      "name": "spring.dubbo.monitor",
+      "description": "监控服务",
+      "type": "com.alibaba.dubbo.config.MonitorConfig"
+    },
+    {
+      "sourceType": "info.zoio.spring.dubbox.properties.DubboProperties",
+      "name": "spring.dubbo.protocol",
+      "description": "应用使用的协议栈",
+      "type": "com.alibaba.dubbo.config.ProtocolConfig"
+    },
+    {
+      "sourceType": "info.zoio.spring.dubbox.properties.DubboProperties",
+      "name": "spring.dubbo.protocols",
+      "description": "应用使用的协议栈(当需要配置超过一个时使用)",
+      "type": "java.util.List<com.alibaba.dubbo.config.ProtocolConfig>"
+    },
+    {
+      "sourceType": "info.zoio.spring.dubbox.properties.DubboProperties",
+      "name": "spring.dubbo.provider",
+      "description": "公用的生产者配置",
+      "type": "com.alibaba.dubbo.config.ProviderConfig"
+    },
+    {
+      "sourceType": "info.zoio.spring.dubbox.properties.DubboProperties",
+      "name": "spring.dubbo.references",
+      "description": "消费者定义服务注册",
+      "type": "java.util.List<com.alibaba.dubbo.config.ReferenceConfig<?>>"
+    },
+    {
+      "sourceType": "info.zoio.spring.dubbox.properties.DubboProperties",
+      "name": "spring.dubbo.registry",
+      "description": "应用注册中心",
+      "type": "com.alibaba.dubbo.config.RegistryConfig"
+    },
+    {
+      "sourceType": "info.zoio.spring.dubbox.properties.DubboProperties",
+      "name": "spring.dubbo.registrys",
+      "description": "应用注册中心(应用配置中心,当需要配置多个是生效)",
+      "type": "java.util.List<com.alibaba.dubbo.config.RegistryConfig>"
+    },
+    {
+      "sourceType": "info.zoio.spring.dubbox.properties.DubboProperties",
+      "name": "spring.dubbo.services",
+      "description": "生产者发布服务",
+      "type": "java.util.List<com.alibaba.dubbo.config.ServiceConfig<?>>"
+    }
+  ]
+}
