@@ -87,7 +87,7 @@ spring:
 @org.springframework.stereotype.Component
 @org.springframework.context.annotation.Profile({"dev","test","online"})
 public class DubboReference {
-	@com.alibaba.dubbo.config.annotation.Reference(group = "demo", version = "1.0.0", timeout = 60000, retries = 0)
+	@com.alibaba.dubbo.config.annotation.@Reference(group = "demo", version = "1.0.0", timeout = 60000, retries = 3,registry={"0"})//registry对应多注册中心配置的id
 	public DemoFacade demoFacade;
 }
 ````
