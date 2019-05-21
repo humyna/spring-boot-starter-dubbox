@@ -43,6 +43,43 @@ spring:
       dispatcher: all
       threadpool: fixed
       threads: 1000
+
+
+
+单注册中心配置示例：
+spring:
+  dubbo:
+ 	registry:
+      address: zookeeper://127.0.0.1:2181 #修改成your zk配置	
+
+多注册中心配置示例：
+spring:
+  dubbo:
+	registry[0]:
+		id: provider #务必填写id
+		address: zookeeper://127.0.0.1:2181 #修改成你服务注册zk地址
+	registry[1]:
+		id: consumer1
+		address: zookeeper://127.0.0.1:2181 #修改成服务提供者1zk地址
+	registry[2]:
+		id: consumer2
+		address: zookeeper://127.0.0.1:2181 #修改成服务提供者2zk地址
+	registry[3]:
+		id: consumer3
+		address: zookeeper://127.0.0.1:2181 #修改成服务提供者3zk地址
+在启动参数中添加，使用逗号隔开
+-Dspring.dubbo.provider.registry.ids=provider
+-Dspring.dubbo.consumer.registry.ids=consumer1,consumer2,consumer3
+
+
+provider多协议支持同多注册中心配置，
+spring:
+  dubbo:
+  	protocol[0]:
+  		id: dubbo #务必填写
+
+在启动参数中添加，使用逗号隔开
+-Dspring.dubbo.provider.protocol.ids=dubbo
 ````
 
 3. 服务调用

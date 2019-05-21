@@ -80,6 +80,7 @@ public class DubboxAutoConfiguration extends AnnotationBean implements Applicati
 
     private List<RegistryConfig> getRegistry(List<RegistryConfig> registrys, String environmentName) {
         String value = environment.getProperty(environmentName);
+        logger.debug("getRegistry[environmentName]="+value);
         if (StringUtils.isEmpty(value)) {
             return null;
         }
@@ -87,6 +88,7 @@ public class DubboxAutoConfiguration extends AnnotationBean implements Applicati
         List<RegistryConfig> ret = new ArrayList<RegistryConfig>();
         for (String val : vals) {
             for (RegistryConfig registryConfig : registrys) {
+            	 logger.debug("registryConfigID="+registryConfig.getId()+";address="+ registryConfig.getAddress());
                 if (val.trim().equals(registryConfig.getId())) {
                     ret.add(registryConfig);
                 }
@@ -130,12 +132,12 @@ public class DubboxAutoConfiguration extends AnnotationBean implements Applicati
         super.setPackage(basePackage);
 
         if (provider != null) {
-            provider.setProtocols(this.getProtocol(protocols, "spring.dubbo.provider.protocol"));
-            provider.setRegistries(this.getRegistry(registryConfigs, "spring.dubbo.provider.registry"));
+            provider.setProtocols(this.getProtocol(protocols, "spring.dubbo.provider.protocol.ids"));
+            provider.setRegistries(this.getRegistry(registryConfigs, "spring.dubbo.provider.registry.ids"));
         }
 
         if (consumer != null) {
-            consumer.setRegistries(this.getRegistry(registryConfigs, "spring.dubbo.consumer.registry"));
+            consumer.setRegistries(this.getRegistry(registryConfigs, "spring.dubbo.consumer.registry.ids"));
         }
 
         this.registerApplication(application, beanFactory);
