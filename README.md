@@ -1,5 +1,6 @@
 ## spring-boot-starter-dubbox 
-> starter解决了引用官方starter暴露的服务被使用高版本dubbox的客户端调用出现的序列化问题。
+> 解决了引用官方starter暴露的服务被使用高版本dubbox的客户端调用出现的序列化问题。
+> 增加了多注册中心以及多协议配置示例
 
 ### 使用方法
 
@@ -115,7 +116,51 @@ public class exportDemoFacadeImpl implements exportDemoFacade {
 }
 ````
 
+#### 三、多注册中心&多协议配置说明
+> 以下配置均经过测试，可放心使用！
 
+1. 单注册中心配置示例
+
+```
+spring:
+  dubbo:
+ 		registry:
+      address: zookeeper://127.0.0.1:2181 #修改成your zk配置
+```
+
+2. 多注册中心配置示例
+
+```
+spring:
+  dubbo:
+		registry[0]:
+			id: provider #务必填写id
+			address: zookeeper://127.0.0.1:2181 #修改成你服务注册zk地址
+		registry[1]:
+			id: consumer1
+			address: zookeeper://127.0.0.1:2181 #修改成服务提供者1zk地址
+		registry[2]:
+			id: consumer2
+			address: zookeeper://127.0.0.1:2181 #修改成服务提供者2zk地址
+		registry[3]:
+			id: consumer3
+			address: zookeeper://127.0.0.1:2181 #修改成服务提供者3zk地址
+在启动参数中添加，使用逗号隔开
+-Dspring.dubbo.provider.registry.ids=provider
+-Dspring.dubbo.consumer.registry.ids=consumer1,consumer2,consumer3
+```
+
+3. provider多协议支持同多注册中心配置
+
+```
+spring:
+  dubbo:
+  	protocol[0]:
+  		id: dubbo #务必填写
+
+在启动参数中添加，使用逗号隔开
+-Dspring.dubbo.provider.protocol.ids=dubbo
+```
 
 
 
